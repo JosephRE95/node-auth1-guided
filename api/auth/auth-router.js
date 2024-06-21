@@ -4,7 +4,7 @@ const router = express.Router()
 const User = require('../users/users-model')
 const bcryptjs = require('bcryptjs')
 
-router.post('register', async (req, res ,next) => {
+router.post('/register', async (req, res ,next) => {
     try {
         const { username, password } = req.body
         const hash = bcrypt.hashSync(password, 8)
@@ -46,7 +46,7 @@ router.post('/login', async (req, res, next) => {
         }
       })
     } else {
-      res.json({ message: 'I dont k ow you'})
+      res.json({ message: 'I dont know you'})
     }
   })
 
