@@ -2,7 +2,7 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const router = express.Router()
 const User = require('../users/users-model')
-const { route } = require('../server')
+const bcryptjs = require('bcryptjs')
 
 router.post('register', async (req, res ,next) => {
     try {
@@ -49,3 +49,5 @@ router.post('/login', async (req, res, next) => {
       res.json({ message: 'I dont k ow you'})
     }
   })
+
+  module.exports = router

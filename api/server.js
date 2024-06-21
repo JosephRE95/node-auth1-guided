@@ -2,8 +2,8 @@ const path = require('path')
 const express = require('express')
 const session = require('express-session')
 const Store = require('connect-session-knex')(session)
-const authRouter = require('/auth/auth-router')
-const usersRouter = require('./users/users-router.js')
+const authRouter = require('./auth/auth-router')
+const usersRouter = require('./users/users-router')
 
 const server = express()
 
@@ -32,7 +32,7 @@ server.use(session({
 }))
 
 
-server.use('/api/auth', authRouter)
+server.use('/api/auth-router', authRouter)
 server.use('/api/users', usersRouter)
 
 server.get('/', (req, res) => {
